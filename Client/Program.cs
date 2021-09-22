@@ -1,3 +1,6 @@
+// Lou Vaughn
+// https://devblogs.microsoft.com/aspnet/azure-static-web-apps-with-blazor/
+
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
