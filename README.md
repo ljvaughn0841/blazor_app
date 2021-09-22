@@ -1,4 +1,5 @@
 # Blazor Starter Application
+![blazor](https://user-images.githubusercontent.com/72235620/134267640-d7efade8-bf23-4d9f-ad4a-8a99eecb3699.JPG)
 
 This template contains an example [Blazor WebAssembly](https://docs.microsoft.com/aspnet/core/blazor/?view=aspnetcore-3.1#blazor-webassembly) client application, a C# [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) and a C# class library with shared code.
 
