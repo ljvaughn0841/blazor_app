@@ -1,0 +1,34 @@
+﻿@page "/Todo"
+<!-- Followed tutorial from
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0&pivots=server -->
+
+<h1>Todo (@todos.Count(todo => !todo.IsDone))</h1> <!-- Header Todo (number of things in todo list unchecked) -->
+
+<ul>
+    @foreach (var todo in todos) // for num of todo's loop
+    {
+        <li> <!-- Bulletin point in list -->
+            <input type="checkbox" @bind="todo.IsDone" /> 
+            <!-- If checkbox is checked the item is done-->
+            <input @bind="todo.Title" /> <!-- The item todo listed -->
+        </li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="newTodo" /> <!-- Gray background text in the input bar -->
+<button @onclick="AddTodo">Add todo</button> <!-- Add todo button activates AddTodo function-->
+
+@code {
+    private List<TodoItem> todos = new(); // initialize todo list
+    private string newTodo; // todo from input box
+
+    private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        // if the user doesnt enter something or enters whitespace it doesnt add the item to the list
+        {
+            todos.Add(new TodoItem { Title = newTodo }); // Adds a new item to the todo list
+            newTodo = string.Empty; // Clears the input box
+        }
+    }
+}
